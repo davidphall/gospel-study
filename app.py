@@ -5,7 +5,7 @@ from dash import html, dcc
 
 from components.sidebar import create_sidebar
 
-app = dash.Dash(
+dash_app = dash.Dash(
     __name__,
     use_pages=True,
     external_stylesheets=[
@@ -15,7 +15,7 @@ app = dash.Dash(
     suppress_callback_exceptions=True,
 )
 
-app.layout = html.Div([
+dash_app.layout = html.Div([
     dcc.Location(id="url"),
     create_sidebar(),
     html.Div(
@@ -24,7 +24,7 @@ app.layout = html.Div([
     ),
 ])
 
-server = app.server
+app = dash_app.server
 
 if __name__ == "__main__":
-    app.run(debug=True, port=8050)
+    dash_app.run(debug=True, port=8050)
