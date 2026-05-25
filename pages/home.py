@@ -11,27 +11,24 @@ layout = html.Div([
     html.Br(),
     dbc.Row([
         dbc.Col([
+            html.Img(src="/assets/Jesus_color.jpg",
+                     style={"width": "100%", "maxWidth": "500px"}),
+        ], width=5),
+        dbc.Col([
             html.Div([
-                html.Div(
-                    html.Img(src="/assets/Jesus_color.jpg", className="home-image"),
-                    style={"display": "inline-block"},
+                html.Hr(style={"borderTop": "1px solid #b1b3b1"}),
+                html.P(
+                    '"Therefore, dearly beloved brethren, let us cheerfully do all '
+                    'things that lie in our power; and then may we stand still, with '
+                    'the utmost assurance, to see the salvation of God, and for his '
+                    'arm to be revealed."',
+                    className="home-quote",
                 ),
-                html.Div([
-                    html.Hr(style={"borderTop": "1px solid #b1b3b1"}),
-                    html.P(
-                        '"Therefore, dearly beloved brethren, let us cheerfully do all '
-                        'things that lie in our power; and then may we stand still, with '
-                        'the utmost assurance, to see the salvation of God, and for his '
-                        'arm to be revealed."',
-                        className="home-quote",
-                    ),
-                    html.P("D&C 123:17", className="home-quote"),
-                    html.Hr(style={"borderTop": "1px solid #b1b3b1"}),
-                ], style={"padding": "100px 0", "marginLeft": "50px", "maxWidth": "400px",
-                           "display": "inline-block", "verticalAlign": "top"}),
-            ]),
-        ], width=8),
-    ]),
+                html.P("D&C 123:17", className="home-quote"),
+                html.Hr(style={"borderTop": "1px solid #b1b3b1"}),
+            ], style={"paddingTop": "80px", "maxWidth": "400px"}),
+        ], width=5),
+    ], align="start"),
     html.Br(),
     html.Hr(),
     dbc.Row([
