@@ -6,37 +6,45 @@ body {
     padding: 0;
 }
 
-/* Sidebar toggle button */
+/* Sidebar toggle button (inside header) */
 .sidebar-toggle-btn {
-    position: fixed;
-    top: 10px;
-    left: 225px;
-    z-index: 1001;
-    background: #051c2c;
+    background: none;
     color: #8aa4af;
     border: none;
-    padding: 8px 12px;
+    padding: 0;
     cursor: pointer;
-    border-radius: 4px;
     font-size: 16px;
-    transition: left 0.3s;
+    margin-right: 12px;
 }
 
 .sidebar-toggle-btn:hover {
     color: #fff;
 }
 
-.sidebar-toggle-btn.toggle-shifted {
-    left: 10px;
-}
-
 /* Sidebar containers */
 .sidebar-open .sidebar {
-    left: 0;
+    width: 220px;
 }
 
 .sidebar-closed .sidebar {
-    left: -220px;
+    width: 50px;
+    overflow: hidden;
+}
+
+.sidebar-closed .sidebar-title,
+.sidebar-closed .sidebar-section-toggle span,
+.sidebar-closed .sidebar-subnav,
+.sidebar-closed .sidebar-divider,
+.sidebar-closed .nav-link span,
+.sidebar-closed .sidebar-section-toggle,
+.sidebar-closed .sidebar > .nav {
+    display: none;
+}
+
+.sidebar-closed .sidebar-header {
+    padding: 15px 12px;
+    display: flex;
+    justify-content: center;
 }
 
 /* Sidebar */
@@ -50,13 +58,15 @@ body {
     padding: 0;
     overflow-y: auto;
     z-index: 1000;
-    transition: left 0.3s;
+    transition: width 0.3s;
 }
 
 .sidebar-header {
     background-color: #051c2c;
     padding: 15px 20px;
     border-bottom: 1px solid #0a2e4a;
+    display: flex;
+    align-items: center;
 }
 
 .sidebar-title {
@@ -72,6 +82,35 @@ body {
     letter-spacing: 1px;
     padding: 10px 20px 5px;
     margin: 0;
+}
+
+.sidebar-section-toggle {
+    color: #8aa4af;
+    padding: 8px 20px;
+    font-size: 14px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    user-select: none;
+    width: 100%;
+    background: none;
+    border: none;
+    text-align: left;
+    font-family: inherit;
+}
+
+.sidebar-section-toggle:hover {
+    color: #fff;
+    background-color: #0a2e4a;
+}
+
+.sidebar-chevron {
+    font-size: 10px;
+}
+
+.sidebar-subnav .nav-link {
+    padding-left: 40px !important;
+    font-size: 13px;
 }
 
 .sidebar-divider {
@@ -106,7 +145,7 @@ body {
 }
 
 .content.content-expanded {
-    margin-left: 0;
+    margin-left: 50px;
 }
 
 /* Home page */
