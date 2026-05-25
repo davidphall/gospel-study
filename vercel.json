@@ -3,7 +3,6 @@
     { "src": "app.py", "use": "@vercel/python" }
   ],
   "routes": [
-    { "src": "/assets/(.*)", "dest": "assets/$1" },
     { "src": "/(.*)", "dest": "app.py" }
   ]
 }
